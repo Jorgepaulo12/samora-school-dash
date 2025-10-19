@@ -6,6 +6,7 @@ import {
   BookOpen,
   Building2,
   ClipboardList,
+  FileText,
 } from "lucide-react";
 import {
   Sidebar,
@@ -26,6 +27,7 @@ const menuItems = [
   { title: "Turmas", url: "/classes", icon: BookOpen },
   { title: "Disciplinas", url: "/subjects", icon: BookOpen },
   { title: "Salas", url: "/rooms", icon: Building2 },
+  { title: "Provas", url: "/exams", icon: FileText },
   { title: "Pautas", url: "/grades", icon: ClipboardList },
 ];
 

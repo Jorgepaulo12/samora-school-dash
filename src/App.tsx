@@ -11,6 +11,7 @@ import Teachers from "./pages/Teachers";
 import Classes from "./pages/Classes";
 import Subjects from "./pages/Subjects";
 import Rooms from "./pages/Rooms";
+import Exams from "./pages/Exams";
 import Grades from "./pages/Grades";
 import NotFound from "./pages/NotFound";
 
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="classes" element={<Classes />} />
               <Route path="subjects" element={<Subjects />} />
               <Route path="rooms" element={<Rooms />} />
+              <Route path="exams" element={<Exams />} />
               <Route path="grades" element={<Grades />} />
             </Route>
             <Route path="*" element={<NotFound />} />
