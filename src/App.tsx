@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Students from "./pages/Students";
 import Teachers from "./pages/Teachers";
 import Classes from "./pages/Classes";
+import Subjects from "./pages/Subjects";
 import Rooms from "./pages/Rooms";
 import Grades from "./pages/Grades";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="students" element={<Students />} />
               <Route path="teachers" element={<Teachers />} />
               <Route path="classes" element={<Classes />} />
+              <Route path="subjects" element={<Subjects />} />
               <Route path="rooms" element={<Rooms />} />
               <Route path="grades" element={<Grades />} />
             </Route>

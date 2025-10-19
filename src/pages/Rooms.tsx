@@ -14,11 +14,11 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 
 const mockRooms = [
-  { id: 1, number: "101", floor: "1º Andar", capacity: 35, type: "Sala Normal", equipment: ["Projetor", "Quadro"] },
-  { id: 2, number: "102", floor: "1º Andar", capacity: 32, type: "Sala Normal", equipment: ["Projetor"] },
-  { id: 3, number: "201", floor: "2º Andar", capacity: 40, type: "Laboratório", equipment: ["Computadores", "Projetor"] },
-  { id: 4, number: "202", floor: "2º Andar", capacity: 30, type: "Sala Normal", equipment: ["Quadro"] },
-  { id: 5, number: "301", floor: "3º Andar", capacity: 38, type: "Auditório", equipment: ["Projetor", "Som", "Microfones"] },
+  { id: 1, number: "101", capacity: 35, type: "Sala Normal", equipment: ["Projetor", "Quadro"] },
+  { id: 2, number: "102", capacity: 32, type: "Sala Normal", equipment: ["Projetor"] },
+  { id: 3, number: "201", capacity: 40, type: "Laboratório", equipment: ["Computadores", "Projetor"] },
+  { id: 4, number: "202", capacity: 30, type: "Sala Normal", equipment: ["Quadro"] },
+  { id: 5, number: "301", capacity: 38, type: "Auditório", equipment: ["Projetor", "Som", "Microfones"] },
 ];
 
 const Rooms = () => {
@@ -54,10 +54,6 @@ const Rooms = () => {
               <div className="grid gap-2">
                 <Label htmlFor="room-number">Número da Sala</Label>
                 <Input id="room-number" placeholder="Ex: 103" />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="floor">Andar</Label>
-                <Input id="floor" placeholder="Ex: 1º Andar" />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="capacity">Capacidade</Label>
@@ -100,10 +96,6 @@ const Rooms = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Andar:</span>
-                <span className="font-medium">{room.floor}</span>
-              </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Capacidade:</span>
                 <span className="font-medium flex items-center gap-1">

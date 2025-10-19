@@ -24,6 +24,7 @@ const menuItems = [
   { title: "Alunos", url: "/students", icon: Users },
   { title: "Professores", url: "/teachers", icon: GraduationCap },
   { title: "Turmas", url: "/classes", icon: BookOpen },
+  { title: "Disciplinas", url: "/subjects", icon: BookOpen },
   { title: "Salas", url: "/rooms", icon: Building2 },
   { title: "Pautas", url: "/grades", icon: ClipboardList },
 ];
@@ -47,7 +48,7 @@ export function AppSidebar() {
                       className={({ isActive }) =>
                         isActive
                           ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                          : "hover:bg-muted"
+                          : "text-foreground hover:bg-muted"
                       }
                     >
                       <item.icon className="h-5 w-5" />

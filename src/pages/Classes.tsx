@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Plus, Search, Edit, Trash2, Users } from "lucide-react";
+import { Plus, Search, Edit, Trash2, Users, Clock } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -20,11 +20,11 @@ import {
 } from "@/components/ui/select";
 
 const mockClasses = [
-  { id: 1, name: "10A", year: "10º Ano", students: 32, room: "Sala 101", coordinator: "Prof. Manuel Costa" },
-  { id: 2, name: "10B", year: "10º Ano", students: 28, room: "Sala 102", coordinator: "Profª. Isabel Ferreira" },
-  { id: 3, name: "11A", year: "11º Ano", students: 30, room: "Sala 201", coordinator: "Prof. António Silva" },
-  { id: 4, name: "11B", year: "11º Ano", students: 27, room: "Sala 202", coordinator: "Profª. Rosa Machado" },
-  { id: 5, name: "12A", year: "12º Ano", students: 25, room: "Sala 301", coordinator: "Prof. Carlos Santos" },
+  { id: 1, name: "10A", year: "10º Ano", students: 32, room: "Sala 101", coordinator: "Prof. Manuel Costa", period: "Manhã" },
+  { id: 2, name: "10B", year: "10º Ano", students: 28, room: "Sala 102", coordinator: "Profª. Isabel Ferreira", period: "Tarde" },
+  { id: 3, name: "11A", year: "11º Ano", students: 30, room: "Sala 201", coordinator: "Prof. António Silva", period: "Manhã" },
+  { id: 4, name: "11B", year: "11º Ano", students: 27, room: "Sala 202", coordinator: "Profª. Rosa Machado", period: "Noite" },
+  { id: 5, name: "12A", year: "12º Ano", students: 25, room: "Sala 301", coordinator: "Prof. Carlos Santos", period: "Tarde" },
 ];
 
 const Classes = () => {
@@ -91,6 +91,19 @@ const Classes = () => {
                 <Label htmlFor="coordinator">Coordenador</Label>
                 <Input id="coordinator" placeholder="Nome do coordenador" />
               </div>
+              <div className="grid gap-2">
+                <Label htmlFor="period">Período</Label>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Selecione o período" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="morning">Manhã</SelectItem>
+                    <SelectItem value="afternoon">Tarde</SelectItem>
+                    <SelectItem value="night">Noite</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
               <Button className="w-full">Criar Turma</Button>
             </div>
           </DialogContent>
@@ -127,6 +140,13 @@ const Classes = () => {
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Ano:</span>
                 <span className="font-medium">{cls.year}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground">Período:</span>
+                <span className="font-medium flex items-center gap-1">
+                  <Clock className="h-4 w-4" />
+                  {cls.period}
+                </span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Sala:</span>
